@@ -1,0 +1,5 @@
+const EMAIL = document.getElementById('mail')
+const COUNTRY = document.getElementById('country')
+const ZIP_CODE = document.getElementById('zip-code')
+const PASSWORD = document.getElementById('password')
+const CONFIRM_PASSWORD = document.getElementById('password-confirm')
