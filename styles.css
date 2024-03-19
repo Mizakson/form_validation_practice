@@ -22,6 +22,6 @@ fieldset {
     align-items: center;
 }
 
-button, input {
+button, input, option, select {
     font-family: inherit;
 }
