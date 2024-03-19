@@ -8,3 +8,10 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
