@@ -11,23 +11,28 @@
     <form>
         <fieldset>
             <label>Email: <span>*</span></label>
-            <input type="email" name="mail" id="mail">
+            <input type="email" name="email" id="mail">
+            <span class="error" id="email-error"></span>
         </fieldset>
         <fieldset>
             <label>Country: <span>*</span></label>
             <input type="text" name="country" id="country">
+            <span class="error" id="country-error"></span>
         </fieldset>
         <fieldset>
             <label>Zip Code: <span>*</span></label>
             <input type="text" name="zip-code" id="zip-code">
+            <span class="error" id="zip-code-error"></span>
         </fieldset>
         <fieldset>
             <label>Password: <span>*</span></label>
             <input type="password" name="password" id="password">
+            <span class="error" id="password-error"></span>
         </fieldset>
         <fieldset>
             <label>Confim Password: <span>*</span></label>
             <input type="password" name="password-confirm" id="password-confirm">
+            <span class="error" id="password-confirm-error"></span>
         </fieldset>
         <fieldset>
             <button id="submit">Submit</button>
