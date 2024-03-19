@@ -1,4 +1,4 @@
-const EMAIL = document.getElementById("email")
+const EMAIL = document.getElementById("mail")
 const COUNTRY = document.getElementById("country")
 const ZIP_CODE = document.getElementById("zip-code")
 const PASSWORD = document.getElementById("password")
