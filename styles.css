@@ -21,3 +21,7 @@ fieldset {
     gap: 5px;
     align-items: center;
 }
+
+button, input {
+    font-family: inherit;
+}
