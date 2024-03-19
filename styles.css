@@ -1,6 +1,8 @@
 body {
     display: flex;
+    padding: 25px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 50px;
 }
