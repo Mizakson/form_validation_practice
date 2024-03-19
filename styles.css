@@ -8,6 +8,12 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 fieldset {
     border: none;
     display: flex;
