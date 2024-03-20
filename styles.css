@@ -25,3 +25,7 @@ fieldset {
 button, input, option, select {
     font-family: inherit;
 }
+
+.active {
+    color: red;
+}
