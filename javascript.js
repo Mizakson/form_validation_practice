@@ -10,9 +10,6 @@ const emailMinLength = 3
 const emailMaxLength = 254
 
 
-// country consts
-const country = document.getElementById("country")
-
 
 // zip code consts
 const zipCode = document.getElementById("zip-code")
@@ -23,6 +20,7 @@ function validateZipCode() {
     "us": ["^\\d{5}(-{0,1}\\d{4})?$", "United States Zip Code Format: NNNNN (optionally NNNNN-NNNN)"]
   }
 
+  const country = document.getElementById("country")
   const zipCodeCountry = country.value
   
   const constraint = new RegExp(zipCodeFormats[zipCodeCountry][0],"")
@@ -45,6 +43,6 @@ const confirmPassword = document.getElementById("password-confirm")
 
 
 // window.onload = () => {
-//     country.onchange = validateZipCode()
-//     zipCode.onchange = validateZipCode()
+//  country.onchange = validateZipCode()
+//  zipCode.onchange = validateZipCode()
 // }
