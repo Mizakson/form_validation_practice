@@ -9,6 +9,10 @@ const emailError = document.getElementById("email-error")
 const emailMinLength = 3
 const emailMaxLength = 254
 
+function validateEmail() {
+    emailError.textContent = ""
+    emailError.className = "error active"
+}
 
 
 // zip code consts
@@ -43,6 +47,9 @@ const confirmPassword = document.getElementById("password-confirm")
 
 
 // window.onload = () => {
+//  email.oninput = validateEmail()
 //  country.onchange = validateZipCode()
-//  zipCode.onchange = validateZipCode()
+//  zipCode.oninput = validateZipCode()
 // }
+
+// form click event to check final validity and give user high five
