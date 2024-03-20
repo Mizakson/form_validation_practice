@@ -26,6 +26,14 @@ button, input, option, select {
     font-family: inherit;
 }
 
+input:valid {
+    border: green;
+}
+
+input:invalid {
+    border: red;
+}
+
 .active {
     color: red;
 }
