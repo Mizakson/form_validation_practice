@@ -29,3 +29,7 @@ button, input, option, select {
 .active {
     color: red;
 }
+
+.test {
+    border: lightgreen;
+}
