@@ -1,5 +1,6 @@
 // form validation practice
 
+
 const constraints = ['typeMismatch', 'valueMissing', 
 'patternMismatch', 'tooShort', 'tooLong']
 
@@ -24,6 +25,7 @@ const validateEmail = (function() {
             emailError.textContent = `Enter an email address greater than ${emailMaxLength} characters.`
         } else if (email.value.length > emailMinLength && email.value.length < emailMaxLength) {
             emailError.textContent = ""
+            
         }
     })
 })();
@@ -103,3 +105,15 @@ const validatePasswords = (function () {
 })();
 
 // form click event to check final validity and give user high five
+// if checkCounter === 4 display high five message
+document.getElementById('validate').addEventListener("click", (event) => {
+    event.preventDefault()
+    event.stopImmediatePropagation()
+    let result = document.querySelector("form").checkValidity()
+    console.log(result)
+    if (result === true) {
+        let highFive = document.createElement("span")
+        highFive.textContent = "high five"
+        document.querySelector("form").appendChild(highFive)
+    }
+})
