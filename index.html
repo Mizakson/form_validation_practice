@@ -17,9 +17,11 @@
         <fieldset>
             <label>Country: <span>*</span></label>
             <select name="country" id="country">
+                <option value="none">-----</option>
                 <option value="de">Germany</option>
                 <option value="nl">Netherlands</option>
             </select>
+            <span class="error" id="country-error"></span>
         </fieldset>
         <fieldset>
             <label>Zip Code: <span>*</span></label>
