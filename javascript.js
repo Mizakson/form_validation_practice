@@ -40,7 +40,6 @@ function checkEmail() {
 
 }
 
-
 const zipCodeFormats = {
     "de": ["^(D-)?\\d{5}$", "Germany ZIPs must have exactly 5 digits: e.g. D-12345 or 12345",],
     "nl": ["^(NL-)?\\d{4}\\s*([A-RT-Z][A-Z]|S[BCE-RT-Z])$", "Netherland ZIPs must have exactly 4 digits, followed by 2 letters except SA, SD and SS"]
@@ -104,6 +103,18 @@ function checkPassword() {
         
         if ( (passwordRegex.test(first)) ) {
             passwordErrorBox.textContent = ""
+
+            passwordConfirm.addEventListener("input", (event) => {
+                let second = passwordConfirm.value
+
+                if (second !== first) {
+                    passwordConfirmErrorBox.textContent = "Please enter matching passwords"
+                } else {
+                    passwordConfirmErrorBox.textContent = ""
+                }
+
+            })
+
         } else {
             passwordErrorBox.textContent = passwordFormatMessage
         }
@@ -112,9 +123,28 @@ function checkPassword() {
 
 }
 
+function checkFormValidity() {
+    const form = document.querySelector("form")
+    const btn = document.getElementById("validate")
+
+    btn.addEventListener("click", (event) => {
+        event.preventDefault()
+        event.stopImmediatePropagation()
+        
+        if ( (form.checkValidity()) ) {
+            document.getElementById("high-five").textContent = "HIGH FIVE"
+        } else if ( !(form.checkValidity()) ) {
+            document.getElementById("high-five").textContent = "INVALID"
+            document.getElementById("high-five").className = "active"
+        }
+
+    }) 
+
+}
 
 const init = (function() {
     checkEmail()
     checkZipCode()
     checkPassword()
+    checkFormValidity()
 })()

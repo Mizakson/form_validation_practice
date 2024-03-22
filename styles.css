@@ -12,6 +12,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding-bottom: 50px;
 }
 
 fieldset {
@@ -28,4 +29,9 @@ button, input, option, select {
 
 .active {
     color: red;
+}
+
+#high-five {
+    font-size: 36px;
+    color: green;
 }
