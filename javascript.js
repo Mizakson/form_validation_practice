@@ -1,3 +1,5 @@
+// form validation practice
+
 function checkEmail() {
     const email = document.getElementById('email')
     email.type = 'email'
@@ -38,7 +40,6 @@ function checkEmail() {
 
 }
 
-checkEmail()
 
 const zipCodeFormats = {
     "de": ["^(D-)?\\d{5}$", "Germany ZIPs must have exactly 5 digits: e.g. D-12345 or 12345",],
@@ -83,9 +84,37 @@ function checkZipCode() {
     })
 }
 
-checkZipCode()
-
-
 // password regex, consts
 const passwordRegex = new RegExp(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/)
 const passwordFormatMessage = "Password must contain one digit from 1 to 9, one lowercase letter, \n one uppercase letter, one special character, no space, and must be 8-16 characters long."
+
+function checkPassword() {
+    const password = document.getElementById('password')
+    password.type = "password"
+    const passwordErrorBox = document.getElementById('password-error')
+    passwordErrorBox.classList = "error active"
+
+    const passwordConfirm = document.getElementById('password-confirm')
+    passwordConfirm.type = "password"
+    const passwordConfirmErrorBox = document.getElementById('password-confirm-error')
+    passwordConfirmErrorBox.classList = "error active"
+
+    password.addEventListener("input", (event) => {
+        let first = password.value
+        
+        if ( (passwordRegex.test(first)) ) {
+            passwordErrorBox.textContent = ""
+        } else {
+            passwordErrorBox.textContent = passwordFormatMessage
+        }
+
+    })
+
+}
+
+
+const init = (function() {
+    checkEmail()
+    checkZipCode()
+    checkPassword()
+})()
