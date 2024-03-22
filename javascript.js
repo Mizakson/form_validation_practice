@@ -12,7 +12,6 @@ function checkEmail() {
 
     email.addEventListener("input", (event) => {
         event.preventDefault()
-        event.stopImmediatePropagation()
         
         if (email.validity.valueMissing) {
             errorBox.textContent = "Empty field: please enter an email adress"
@@ -47,7 +46,41 @@ const zipCodeFormats = {
 }
 
 function checkZipCode() {    
+    const country = document.getElementById('country')
+    const countryErrorBox = document.getElementById('country-error')
+    countryErrorBox.classList = "error active"
 
+    const zip = document.getElementById('zip-code')
+    const zipErrorBox = document.getElementById('zip-code-error')
+    zipErrorBox.classList = "error active"
+
+    country.addEventListener("change", (event) => {
+        event.preventDefault()
+
+        let activeCountry = country.value
+        if (activeCountry === "none") {
+            countryErrorBox.textContent = "Select a valid country"
+            zipErrorBox.textContent = "Select a valid country"
+        }
+        if (activeCountry === "de" | activeCountry === "nl") {
+            countryErrorBox.textContent = ""
+            let msg = zipCodeFormats[activeCountry][1]
+            zipErrorBox.textContent = msg
+            let regex = new RegExp(zipCodeFormats[activeCountry][0],"")
+            
+            zip.oninput = () => {
+
+                if ((regex.test(zip.value))) {
+                    zipErrorBox.textContent = ""
+                } else {
+                    zipErrorBox.textContent = msg
+                }
+
+            }
+
+        }        
+
+    })
 }
 
 checkZipCode()
